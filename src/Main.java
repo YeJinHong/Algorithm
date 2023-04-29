@@ -1,38 +1,21 @@
 import java.util.Arrays;
-import java.util.Scanner;
-
-import ReferenceCode.MaxHeap;
 
 public class Main {
-
+	
+	public static void mergeSort(int low, int high, int[] arr) {
+		
+		int mid = (low+high)/2;
+		mergeSort(low, mid, arr);
+		mergeSort(mid+1, high, arr);
+	}
 	public static void main(String[] args) {
-		int T, N;
-		Scanner sc = new Scanner(System.in);
-		T = sc.nextInt();
-
-		for (int test_case = 1; test_case <= T; test_case++) {
-			N = sc.nextInt();
-
-			MaxHeap maxHeap = new MaxHeap();
-
-//			maxHeap.init();
-			int[] heap = new int[14];
-
-			for (int i = 0; i < N; i++) {
-				int value;
-				value = sc.nextInt();
-				maxHeap.heapPush(heap, i, value);
-			}
-
-			System.out.printf("#%d ", test_case);
-
-			for (int i = 0; i < N; i++) {
-				int value = maxHeap.heapPop(heap, N - i);
-				System.out.printf("%d", value);
-				System.out.printf(" ");
-			}
-			System.out.printf("\n");
-			System.out.printf(" ");
+		int[] arr = new int[10];
+		for(int i = 0; i < 10; i++) {
+			arr[i] = (int)Math.random()*10;
 		}
+		
+		System.out.println(Arrays.toString(arr));
+		
+		mergeSort(0, 10, arr);
 	}
 }

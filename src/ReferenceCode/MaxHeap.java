@@ -1,4 +1,4 @@
-package ReferenceCode;
+package referenceCode;
 
 public class MaxHeap {
 	public void heapPush(int[] heap, int heapSize, int value) {

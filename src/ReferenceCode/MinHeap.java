@@ -1,4 +1,4 @@
-package ReferenceCode;
+package referenceCode;
 
 import java.util.Arrays;
 
